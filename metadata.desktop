@@ -1,0 +1,11 @@
+[Desktop Entry]
+Icon=security-high-symbolic.symbolic
+Type=Service
+ServiceTypes=KPluginInfo
+
+Name=SGX Quote 
+Comment=SGX Quote structure
+
+X-KDE-PluginInfo-Name=SGXQuote
+X-KDE-PluginInfo-Version=1.0
+X-KDE-PluginInfo-Category=structure/js
