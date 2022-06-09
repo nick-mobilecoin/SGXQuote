@@ -1,7 +1,9 @@
 function init(){
     var quote = struct({
         header: header(),
-        enclave_report: enclave_report(),
+        enclave_report: report_body(),
+        quote_length: uint32(),
+        quote_signature: ecdsa_signature_data(),
     });
     return quote;
 }
@@ -20,8 +22,8 @@ function header(){
     return header;
 }
 
-function enclave_report(){
-    var report = struct({
+function ecdsa_signature_data(){
+    var data = struct({
         isv_signature: ecdsa_signature(),
         attestation_key: ecdsa_key(),
         qe_report: report_body(),
@@ -29,7 +31,7 @@ function enclave_report(){
         qe_authentication_data: authentication_data(),
         qe_certification_data: certification_data(),
     });
-    return report;
+    return data;
 }
 
 function ecdsa_signature(){
