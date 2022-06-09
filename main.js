@@ -53,7 +53,7 @@ function ecdsa_key(){
 function authentication_data(){
     var data = struct({
         size: uint16(),
-        data: array(uint8(), function(){ return this.size; }),
+        data: array(uint8(), function(){ return this.parent.size.value; }),
     });
     return data;
 }
@@ -62,7 +62,7 @@ function certification_data(){
     var data = struct({
         type: uint16(),
         size: uint32(),
-        data: array(uint8(), function(){ return this.size; }),
+        data: array(uint8(), function(){ return this.parent.size.value; }),
     });
     return data;
 }
